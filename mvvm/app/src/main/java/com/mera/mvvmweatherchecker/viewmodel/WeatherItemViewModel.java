@@ -2,6 +2,7 @@ package com.mera.mvvmweatherchecker.viewmodel;
 
 import android.content.Context;
 import android.databinding.BaseObservable;
+import android.databinding.Bindable;
 import android.databinding.BindingAdapter;
 import android.widget.ImageView;
 
@@ -22,18 +23,22 @@ public class WeatherItemViewModel extends BaseObservable {
         mWeatherData = data;
     }
 
+    @Bindable
     public String getCity() {
         return mWeatherData.getCity();
     }
 
+    @Bindable
     public String getTemperature() {
         return mWeatherData.getTemperatureInCelsius();
     }
 
+    @Bindable
     public String getDescription() {
         return mWeatherData.getDescription();
     }
 
+    @Bindable
     public String getImageUrl() {
         return mWeatherData.getIconAddress();
     }

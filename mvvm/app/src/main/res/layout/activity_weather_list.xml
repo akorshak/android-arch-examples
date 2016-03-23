@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
+    <data class="com.mera.mvvmweatherchecker.bindings.WeatherListBinding">
 
         <variable
             name="weatherListViewModel"

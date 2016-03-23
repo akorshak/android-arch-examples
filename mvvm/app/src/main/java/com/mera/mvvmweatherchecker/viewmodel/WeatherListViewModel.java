@@ -68,3 +68,4 @@ public class WeatherListViewModel implements WeatherViewModel, Observer<WeatherR
         updataWeatherData();
     }
 }
+

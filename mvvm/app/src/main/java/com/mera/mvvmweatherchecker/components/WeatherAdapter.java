@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.mera.mvvmweatherchecker.R;
-import com.mera.mvvmweatherchecker.databinding.ContentWeatherItemBinding;
+import com.mera.mvvmweatherchecker.bindings.WeatherItemBinding;
 import com.mera.mvvmweatherchecker.models.WeatherResponse;
 import com.mera.mvvmweatherchecker.viewmodel.WeatherItemViewModel;
 
@@ -34,7 +34,7 @@ public class WeatherAdapter extends RecyclerView.Adapter {
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        ContentWeatherItemBinding binding = DataBindingUtil.inflate(
+        WeatherItemBinding binding = DataBindingUtil.inflate(
                 LayoutInflater.from(mContext),
                 R.layout.content_weather_item,
                 parent,
@@ -59,9 +59,9 @@ public class WeatherAdapter extends RecyclerView.Adapter {
     }
 
     private static class ViewHolder extends RecyclerView.ViewHolder {
-        private ContentWeatherItemBinding mBinding;
+        private WeatherItemBinding mBinding;
 
-        public ViewHolder(ContentWeatherItemBinding binding) {
+        public ViewHolder(WeatherItemBinding binding) {
             super(binding.itemLayout);
             mBinding = binding;
         }

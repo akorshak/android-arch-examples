@@ -9,8 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.mera.mvvmweatherchecker.bindings.WeatherListBinding;
 import com.mera.mvvmweatherchecker.components.WeatherAdapter;
-import com.mera.mvvmweatherchecker.databinding.ActivityWeatherListBinding;
 import com.mera.mvvmweatherchecker.interfaces.WeatherView;
 import com.mera.mvvmweatherchecker.interfaces.WeatherViewModel;
 import com.mera.mvvmweatherchecker.models.WeatherResponse;
@@ -24,7 +24,7 @@ public class WeatherListActivity extends AppCompatActivity implements WeatherVie
     private LinearLayoutManager mLayoutManager;
 
     private WeatherViewModel mViewModel;
-    private ActivityWeatherListBinding mBinding;
+    private WeatherListBinding mBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
