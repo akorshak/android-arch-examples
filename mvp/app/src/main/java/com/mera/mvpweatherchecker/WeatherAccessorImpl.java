@@ -1,6 +1,6 @@
 package com.mera.mvpweatherchecker;
 
-import com.mera.mvpweatherchecker.interfaces.WeatherInteractor;
+import com.mera.mvpweatherchecker.interfaces.WeatherAccessor;
 import com.mera.mvpweatherchecker.models.WeatherResponse;
 
 import retrofit2.Call;
@@ -14,13 +14,13 @@ import retrofit2.http.GET;
  * Created by akorshak on 3/18/2016.
  * Project: MVP Weather Checker
  */
-class WeatherInteractorImpl implements WeatherInteractor {
+class WeatherAccessorImpl implements WeatherAccessor {
 
     private static final String API_URL = "http://api.openweathermap.org/data/2.5/";
 
     private WeatherService mWeatherService;
 
-    WeatherInteractorImpl() {
+    WeatherAccessorImpl() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(API_URL)
                 .addConverterFactory(GsonConverterFactory.create())

@@ -8,7 +8,7 @@ import java.util.List;
  * Created by akorshak on 3/18/2016.
  * Project: MVP Weather Checker
  */
-public interface WeatherInteractor {
+public interface WeatherAccessor {
     void fetchWeatherData(OnFetchListener listener);
 
     interface OnFetchListener {

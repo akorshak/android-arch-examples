@@ -1,6 +1,6 @@
 package com.mera.mvpweatherchecker;
 
-import com.mera.mvpweatherchecker.interfaces.WeatherInteractor;
+import com.mera.mvpweatherchecker.interfaces.WeatherAccessor;
 import com.mera.mvpweatherchecker.interfaces.WeatherPresenter;
 import com.mera.mvpweatherchecker.interfaces.WeatherView;
 import com.mera.mvpweatherchecker.models.WeatherResponse;
@@ -11,14 +11,14 @@ import java.util.List;
  * Created by akorshak on 3/18/2016.
  * Project: MVP Weather Checker
  */
-class WeatherPresenterImpl implements WeatherPresenter, WeatherInteractor.OnFetchListener {
+class WeatherPresenterImpl implements WeatherPresenter, WeatherAccessor.OnFetchListener {
 
     private WeatherView mView;
-    private WeatherInteractor mInteractor;
+    private WeatherAccessor mInteractor;
 
     WeatherPresenterImpl(WeatherView view) {
         mView = view;
-        mInteractor = new WeatherInteractorImpl();
+        mInteractor = new WeatherAccessorImpl();
     }
 
     @Override
