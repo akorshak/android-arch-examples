@@ -1,9 +1,8 @@
 package com.mera.mvpweatherchecker.interfaces;
 
-import android.content.Context;
-
 import com.mera.mvpweatherchecker.models.WeatherResponse;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -11,13 +10,13 @@ import java.util.List;
  * Project: MVP Weather Checker
  */
 public interface WeatherView {
-    Context getContext();
-
     void showForecast(List<WeatherResponse.WeatherData> data);
 
     void showProgressDialog();
 
     void hideProgressDialog();
 
-    void showError(String error);
+    void showError(int stringId);
+
+    File getCacheDirectory();
 }

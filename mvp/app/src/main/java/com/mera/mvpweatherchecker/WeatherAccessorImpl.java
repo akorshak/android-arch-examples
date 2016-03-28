@@ -3,6 +3,12 @@ package com.mera.mvpweatherchecker;
 import com.mera.mvpweatherchecker.interfaces.WeatherAccessor;
 import com.mera.mvpweatherchecker.models.WeatherResponse;
 
+import java.io.File;
+import java.io.IOException;
+
+import okhttp3.Cache;
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -17,13 +23,21 @@ import retrofit2.http.GET;
 class WeatherAccessorImpl implements WeatherAccessor {
 
     private static final String API_URL = "http://api.openweathermap.org/data/2.5/";
+    private static final long CACHE_SIZE = 10 * 1024 * 1024;
 
     private WeatherService mWeatherService;
 
-    WeatherAccessorImpl() {
+    WeatherAccessorImpl(File cachePath) {
+        Cache cache = new Cache(new File(cachePath, "http"), CACHE_SIZE);
+
+        OkHttpClient.Builder httpBuilder = new OkHttpClient.Builder()
+                .addNetworkInterceptor(new CachingControlInterceptor())
+                .cache(cache);
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(API_URL)
                 .addConverterFactory(GsonConverterFactory.create())
+                .client(httpBuilder.build())
                 .build();
         mWeatherService = retrofit.create(WeatherService.class);
     }
@@ -45,6 +59,17 @@ class WeatherAccessorImpl implements WeatherAccessor {
                 listener.onError(t);
             }
         });
+    }
+
+    public static class CachingControlInterceptor implements Interceptor {
+        @Override
+        public okhttp3.Response intercept(Chain chain) throws IOException {
+            okhttp3.Response originalResponse = chain.proceed(chain.request());
+            return originalResponse.newBuilder()
+                    .removeHeader("Pragma")
+                    .header("Cache-Control", String.format("max-age=%d", 3600))
+                    .build();
+        }
     }
 
     interface WeatherService {

@@ -1,6 +1,5 @@
 package com.mera.mvpweatherchecker;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +15,7 @@ import com.mera.mvpweatherchecker.interfaces.WeatherPresenter;
 import com.mera.mvpweatherchecker.interfaces.WeatherView;
 import com.mera.mvpweatherchecker.models.WeatherResponse;
 
+import java.io.File;
 import java.util.List;
 
 import butterknife.Bind;
@@ -69,23 +69,13 @@ public class WeatherListActivity extends AppCompatActivity implements WeatherVie
     }
 
     @Override
-    public Context getContext() {
-        return this;
-    }
-
-    @Override
     public void showForecast(List<WeatherResponse.WeatherData> data) {
         mWeatherAdapter.updateDataset(data);
     }
 
     @Override
     public void showProgressDialog() {
-        mRefreshView.post(new Runnable() {
-            @Override
-            public void run() {
-                mRefreshView.setRefreshing(true);
-            }
-        });
+        mRefreshView.setRefreshing(true);
     }
 
     @Override
@@ -94,8 +84,13 @@ public class WeatherListActivity extends AppCompatActivity implements WeatherVie
     }
 
     @Override
-    public void showError(String error) {
-        Toast.makeText(this, error, Toast.LENGTH_LONG).show();
+    public void showError(int stringId) {
+        Toast.makeText(this, getString(stringId), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public File getCacheDirectory() {
+        return getCacheDir();
     }
 
     @Override

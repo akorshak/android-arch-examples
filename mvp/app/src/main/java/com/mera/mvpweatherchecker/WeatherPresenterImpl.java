@@ -18,7 +18,7 @@ class WeatherPresenterImpl implements WeatherPresenter, WeatherAccessor.OnFetchL
 
     WeatherPresenterImpl(WeatherView view) {
         mView = view;
-        mInteractor = new WeatherAccessorImpl();
+        mInteractor = new WeatherAccessorImpl(view.getCacheDirectory());
     }
 
     @Override
@@ -39,8 +39,7 @@ class WeatherPresenterImpl implements WeatherPresenter, WeatherAccessor.OnFetchL
         mView.hideProgressDialog();
         switch(errorCode) {
             default:
-                String message = mView.getContext().getString(R.string.error_message);
-                mView.showError(message);
+                mView.showError(R.string.error_message);
                 break;
         }
     }
