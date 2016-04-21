@@ -8,12 +8,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.mera.mvpweatherchecker.R;
+import com.github.pwittchen.weathericonview.WeatherIconView;
 import com.mera.mvpweatherchecker.models.WeatherResponse;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.mera.mvpweatherchecker.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -48,15 +49,13 @@ public class WeatherAdapter extends RecyclerView.Adapter {
         ViewHolder typedHolder = (ViewHolder) holder;
 
         WeatherResponse.WeatherData weatherItem = mWeatherData.get(position);
-        typedHolder.mCity.setText(weatherItem.getCity());
+        typedHolder.mDate.setText(weatherItem.getReadableDate());
         typedHolder.mDescription.setText(weatherItem.getDescription());
-        typedHolder.mTemperature.setText(weatherItem.getTemperatureInCelsius());
+        typedHolder.mTemperature.setText(weatherItem.getTemperature());
 
-        Glide.with(mContext)
-                .load(weatherItem.getIconAddress())
-                .fitCenter()
-                .crossFade()
-                .into(typedHolder.mImage);
+        int resId = mContext.getResources().getIdentifier(weatherItem.getIconResourceName(), "string", mContext.getPackageName());
+        typedHolder.mImage.setIconResource(mContext.getString(resId));
+
     }
 
     @Override
@@ -71,8 +70,8 @@ public class WeatherAdapter extends RecyclerView.Adapter {
 
     static class ViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.iv_image) ImageView mImage;
-        @Bind(R.id.tv_city) TextView mCity;
+        @Bind(R.id.iv_image) WeatherIconView mImage;
+        @Bind(R.id.tv_date) TextView mDate;
         @Bind(R.id.tv_desc) TextView mDescription;
         @Bind(R.id.tv_temp) TextView mTemperature;
 

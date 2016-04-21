@@ -8,4 +8,25 @@
     <dimen name="text_item_temp">24sp</dimen>
 
     <dimen name="icon_size_dafault">52dp</dimen>
+
+    <dimen name="image_final_width">40dp</dimen>
+    <dimen name="header_view_height">130dp</dimen>
+    <dimen name="header_background_view_height">250dp</dimen>
+    <dimen name="cardview_vertical_margin">5dp</dimen>
+    <dimen name="cardview_cornder_radius">2dp</dimen>
+    <dimen name="date_left_margin">10dp</dimen>
+    <dimen name="daily_weather_icon_width">85dp</dimen>
+    <dimen name="daily_weather_icon_margin">15dp</dimen>
+    <dimen name="row_description_text_size">18sp</dimen>
+    <dimen name="row_temp_text_size">36sp</dimen>
+    <dimen name="header_horizontal_margin">15dp</dimen>
+    <dimen name="header_descr_text_size">16sp</dimen>
+    <dimen name="header_temp_text_size">36sp</dimen>
+    <dimen name="header_humidity_text_size">20sp</dimen>
+    <dimen name="header_pressure_text_size">20sp</dimen>
+    <dimen name="title_text_size">17sp</dimen>
+    <dimen name="title_start_margin">60dp</dimen>
+    <dimen name="text_icon_margin">10dp</dimen>
+    <dimen name="icon_text_margin">5dp</dimen>
+
 </resources>
