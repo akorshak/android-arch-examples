@@ -1,0 +1,11 @@
+<resources>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+    <dimen name="text_item_title">20sp</dimen>
+    <dimen name="text_item_desc">18sp</dimen>
+    <dimen name="text_item_temp">24sp</dimen>
+
+    <dimen name="icon_size_dafault">52dp</dimen>
+</resources>
