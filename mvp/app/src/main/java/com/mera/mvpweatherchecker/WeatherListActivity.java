@@ -33,11 +33,9 @@ public class WeatherListActivity extends AppCompatActivity implements WeatherVie
 
     private static final String CURR_WEATHER_EXTRA = "curr_weather_extra";
 
-    @Bind(R.id.title)
-    StatusWidget mTitle;
+    @Bind(R.id.title) StatusWidget mTitle;
     @Bind(R.id.curr_weather_icon) WeatherIconView mCurrWeatherIcon;
-    @Bind(R.id.header_weather)
-    HeaderWidget mHeaderWeatherView;
+    @Bind(R.id.header_weather) HeaderWidget mHeaderWeatherView;
     @Bind(R.id.app_bar) AppBarLayout mAppBar;
     @Bind(R.id.list_refresh) SwipeRefreshLayout mRefreshView;
     @Bind(R.id.list_content) RecyclerView mWeatherList;
