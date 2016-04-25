@@ -23,7 +23,7 @@
                 android:layout_height="@dimen/header_background_view_height"
                 android:background="@color/colorPrimary" />
 
-            <com.mera.mvpweatherchecker.ui.HeaderWeatherView
+            <com.mera.mvpweatherchecker.ui.HeaderWidget
                 android:id="@+id/header_weather"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/header_view_height"
@@ -47,7 +47,7 @@
         app:theme="@style/ThemeOverlay.AppCompat.Dark"
         app:title="">
 
-        <com.mera.mvpweatherchecker.ui.TitleStatusView
+        <com.mera.mvpweatherchecker.ui.StatusWidget
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -64,7 +64,7 @@
         app:startIconSize="@integer/def_start_icon_size"
         app:changeBehaviorPoint="1"
         app:finalAreaSize="@dimen/image_final_width"
-        app:layout_behavior="com.mera.mvpweatherchecker.ui.WeatherIconBehavior"
+        app:layout_behavior="com.mera.mvpweatherchecker.components.WeatherIconBehavior"
         app:weatherIconColor="@color/colorAccent"
         app:weatherIconResource="@string/wi_na"
         />

@@ -7,31 +7,29 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/cardview_vertical_margin"
     android:layout_marginTop="@dimen/cardview_vertical_margin"
-    app:cardCornerRadius="@dimen/cardview_cornder_radius"
-    >
+    app:cardCornerRadius="@dimen/cardview_cornder_radius">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3">
 
         <TextView
             android:id="@+id/tv_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="@dimen/date_left_margin"
+            android:layout_weight="1"
             android:textColor="@color/colorPrimary"
             android:textSize="22sp"
-            />
+            android:gravity="center_vertical|end"/>
 
         <com.github.pwittchen.weathericonview.WeatherIconView
             android:id="@+id/iv_image"
             android:layout_width="@dimen/daily_weather_icon_width"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/daily_weather_icon_margin"
-            android:layout_marginStart="@dimen/daily_weather_icon_margin"
-            android:layout_marginTop="@dimen/daily_weather_icon_margin"
+            android:layout_weight="1"
             android:gravity="center"
             app:weatherIconColor="@color/colorPrimary"
             app:weatherIconResource="@string/wi_day_sunny_overcast"
@@ -40,14 +38,14 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="20dp"
-            android:gravity="center">
+            android:layout_weight="1"
+            android:gravity="center_vertical|start">
 
             <com.github.pwittchen.weathericonview.WeatherIconView
                 android:id="@+id/thermometer_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="start"
                 app:weatherIconColor="@color/colorPrimary"
                 app:weatherIconResource="@string/wi_thermometer"
                 app:weatherIconSize="@integer/row_thermometer_icon_size" />

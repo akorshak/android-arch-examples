@@ -1,13 +1,11 @@
 package com.mera.mvpweatherchecker;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,8 +18,8 @@ import com.mera.mvpweatherchecker.interfaces.WeatherPresenter;
 import com.mera.mvpweatherchecker.interfaces.WeatherView;
 import com.mera.mvpweatherchecker.models.WeatherResponse;
 import com.mera.mvpweatherchecker.ui.AnimationConstants;
-import com.mera.mvpweatherchecker.ui.HeaderWeatherView;
-import com.mera.mvpweatherchecker.ui.TitleStatusView;
+import com.mera.mvpweatherchecker.ui.HeaderWidget;
+import com.mera.mvpweatherchecker.ui.StatusWidget;
 
 import org.parceler.Parcels;
 
@@ -35,9 +33,11 @@ public class WeatherListActivity extends AppCompatActivity implements WeatherVie
 
     private static final String CURR_WEATHER_EXTRA = "curr_weather_extra";
 
-    @Bind(R.id.title) TitleStatusView mTitle;
+    @Bind(R.id.title)
+    StatusWidget mTitle;
     @Bind(R.id.curr_weather_icon) WeatherIconView mCurrWeatherIcon;
-    @Bind(R.id.header_weather) HeaderWeatherView mHeaderWeatherView;
+    @Bind(R.id.header_weather)
+    HeaderWidget mHeaderWeatherView;
     @Bind(R.id.app_bar) AppBarLayout mAppBar;
     @Bind(R.id.list_refresh) SwipeRefreshLayout mRefreshView;
     @Bind(R.id.list_content) RecyclerView mWeatherList;

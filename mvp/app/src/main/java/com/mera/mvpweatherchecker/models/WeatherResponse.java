@@ -201,8 +201,5 @@ public class WeatherResponse {
             result = 31 * result + (mWeather != null ? mWeather.hashCode() : 0);
             return result;
         }
-
-
     }
-
 }

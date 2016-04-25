@@ -1,4 +1,4 @@
-package com.mera.mvpweatherchecker.ui;
+package com.mera.mvpweatherchecker.components;
 
 import android.content.Context;
 import android.content.res.TypedArray;
