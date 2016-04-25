@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="def_start_icon_size">75</integer>
+    <integer name="def_final_icon_size">30</integer>
+    <integer name="daily_weather_icon_size">60</integer>
+    <integer name="row_thermometer_icon_size">30</integer>
+    <integer name="header_thermometer_icon_size">30</integer>
+    <integer name="header_humidity_icon_size">28</integer>
+    <integer name="header_pressure_icon_size">28</integer>
+    <integer name="title_icon_size">23</integer>
+
+</resources>

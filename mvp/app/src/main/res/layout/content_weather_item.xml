@@ -1,39 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="@dimen/text_margin">
+    android:layout_marginBottom="@dimen/cardview_vertical_margin"
+    android:layout_marginTop="@dimen/cardview_vertical_margin"
+    app:cardCornerRadius="@dimen/cardview_cornder_radius">
 
-    <ImageView
-        android:id="@+id/iv_image"
-        android:layout_width="@dimen/icon_size_dafault"
-        android:layout_height="@dimen/icon_size_dafault"
-        android:layout_centerVertical="true" />
-
-    <TextView
-        android:id="@+id/tv_city"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/iv_image"
-        android:layout_marginLeft="@dimen/text_margin"
-        android:layout_toRightOf="@+id/iv_image"
-        android:textSize="@dimen/text_item_title"
-        android:textStyle="bold" />
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3">
 
-    <TextView
-        android:id="@+id/tv_desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/tv_city"
-        android:layout_below="@id/tv_city"
-        android:textSize="@dimen/text_item_desc" />
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/colorPrimary"
+            android:textSize="22sp"
+            android:gravity="center_vertical|end"/>
 
-    <TextView
-        android:id="@+id/tv_temp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:textSize="@dimen/text_item_temp" />
+        <com.github.pwittchen.weathericonview.WeatherIconView
+            android:id="@+id/iv_image"
+            android:layout_width="@dimen/daily_weather_icon_width"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:weatherIconColor="@color/colorPrimary"
+            app:weatherIconResource="@string/wi_day_sunny_overcast"
+            app:weatherIconSize="@integer/daily_weather_icon_size" />
 
-</RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|start">
+
+            <com.github.pwittchen.weathericonview.WeatherIconView
+                android:id="@+id/thermometer_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                app:weatherIconColor="@color/colorPrimary"
+                app:weatherIconResource="@string/wi_thermometer"
+                app:weatherIconSize="@integer/row_thermometer_icon_size" />
+
+            <TextView
+                android:id="@+id/tv_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/thermometer_icon"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/thermometer_icon"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/row_temp_text_size" />
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/thermometer_icon"
+                android:layout_below="@id/thermometer_icon"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/row_description_text_size" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

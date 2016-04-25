@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <com.github.pwittchen.weathericonview.WeatherIconView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/title_start_margin"
+        app:weatherIconColor="@color/colorAccent"
+        app:weatherIconResource="@string/wi_thermometer"
+        app:weatherIconSize="@integer/title_icon_size" />
+
+    <TextView
+        android:id="@+id/toolbar_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/default_na_text"
+        android:textColor="@color/colorAccent"
+        android:textSize="17sp" />
+
+    <com.github.pwittchen.weathericonview.WeatherIconView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_icon_margin"
+        app:weatherIconColor="@color/colorAccent"
+        app:weatherIconResource="@string/wi_humidity"
+        app:weatherIconSize="@integer/title_icon_size" />
+
+    <TextView
+        android:id="@+id/toolbar_hubidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/icon_text_margin"
+        android:text="@string/default_na_text"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/title_text_size" />
+
+    <com.github.pwittchen.weathericonview.WeatherIconView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_icon_margin"
+        app:weatherIconColor="@color/colorAccent"
+        app:weatherIconResource="@string/wi_barometer"
+        app:weatherIconSize="@integer/title_icon_size" />
+
+    <TextView
+        android:id="@+id/toolbar_pressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/icon_text_margin"
+        android:text="@string/default_na_text"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/title_text_size" />
+
+</LinearLayout>

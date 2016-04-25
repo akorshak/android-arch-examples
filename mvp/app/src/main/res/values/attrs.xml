@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="WeatherIconBehavior">
+        <attr name="finalIconSize" format="integer" />
+        <attr name="startIconSize" format="integer" />
+        <attr name="finalAreaSize" format="dimension"/>
+        <attr name="changeBehaviorPoint" format="float"/>
+    </declare-styleable>
+</resources>

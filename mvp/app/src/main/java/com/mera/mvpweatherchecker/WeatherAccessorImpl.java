@@ -15,6 +15,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 /**
  * Created by akorshak on 3/18/2016.
@@ -24,6 +25,10 @@ class WeatherAccessorImpl implements WeatherAccessor {
 
     private static final String API_URL = "http://api.openweathermap.org/data/2.5/";
     private static final long CACHE_SIZE = 10 * 1024 * 1024;
+
+    private static final String CITY = "Nizhny Novgorod";
+    private static final String UNITS = "metric";
+    private static final String API_KEY = "6b462378109409573b90b51b8a4b79f5";
 
     private WeatherService mWeatherService;
 
@@ -44,7 +49,7 @@ class WeatherAccessorImpl implements WeatherAccessor {
 
     @Override
     public void fetchWeatherData(final OnFetchListener listener) {
-        mWeatherService.fetchWeather().enqueue(new Callback<WeatherResponse>() {
+        mWeatherService.fetchWeather(UNITS, CITY, API_KEY).enqueue(new Callback<WeatherResponse>() {
             @Override
             public void onResponse(Call<WeatherResponse> call, Response<WeatherResponse> response) {
                 if (response.isSuccessful()) {
@@ -73,7 +78,7 @@ class WeatherAccessorImpl implements WeatherAccessor {
     }
 
     interface WeatherService {
-        @GET("find?lat=55.5&lon=37.5&cnt=10&appid=6b462378109409573b90b51b8a4b79f5")
-        Call<WeatherResponse> fetchWeather();
+        @GET("forecast/daily")
+        Call<WeatherResponse> fetchWeather(@Query("units") String units, @Query("q") String city, @Query("appid") String apiKey);
     }
 }

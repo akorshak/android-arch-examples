@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/header_weather"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/header_view_height"
+    android:orientation="horizontal"
+    android:weightSum="2">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/header_horizontal_margin"
+        android:layout_gravity="start"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary"
+        android:gravity="end|center_vertical">
+
+        <TextView
+            android:id="@+id/curr_weather_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="@string/default_na_text"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/header_temp_text_size" />
+
+        <com.github.pwittchen.weathericonview.WeatherIconView
+            android:id="@+id/thermometer_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/curr_weather_temp"
+            android:layout_alignBaseline="@+id/curr_weather_temp"
+            app:weatherIconColor="@color/colorAccent"
+            app:weatherIconResource="@string/wi_thermometer"
+            app:weatherIconSize="@integer/header_thermometer_icon_size" />
+
+        <TextView
+            android:id="@+id/curr_weather_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/curr_weather_temp"
+            android:text="@string/default_na_text"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/header_descr_text_size" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:layout_marginStart="@dimen/header_horizontal_margin"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary"
+        android:gravity="start|center_vertical">
+
+        <com.github.pwittchen.weathericonview.WeatherIconView
+            android:id="@+id/humidity_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            app:weatherIconColor="@color/colorAccent"
+            app:weatherIconResource="@string/wi_humidity"
+            app:weatherIconSize="@integer/header_humidity_icon_size" />
+
+        <TextView
+            android:id="@+id/humidity_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/humidity_icon"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/humidity_icon"
+            android:text="@string/default_na_text"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/header_humidity_text_size" />
+
+        <com.github.pwittchen.weathericonview.WeatherIconView
+            android:id="@+id/barometer_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/humidity_icon"
+            app:weatherIconColor="@color/colorAccent"
+            app:weatherIconResource="@string/wi_barometer"
+            app:weatherIconSize="@integer/header_pressure_icon_size" />
+
+        <TextView
+            android:id="@+id/pressure_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/barometer_icon"
+            android:layout_below="@id/humidity_value"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/barometer_icon"
+            android:text="@string/default_na_text"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/header_pressure_text_size" />
+
+    </RelativeLayout>
+</LinearLayout>
