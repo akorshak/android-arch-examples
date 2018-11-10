@@ -4,6 +4,8 @@
     The target is to show different general approaches (MVC, MVP, MVVM) for developing client-server applications
     on the same showcase (getting weather from Open Weather).
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/1426e08fdbf56b6ab3b8/maintainability)](https://codeclimate.com/github/akorshak/android-arch-examples/maintainability)
+
 License
 =======
     Licensed under the Apache License, Version 2.0 (the "License");
